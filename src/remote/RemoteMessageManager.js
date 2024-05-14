@@ -1,5 +1,5 @@
 import protobufjs from "protobufjs";
-import { system } from "systeminformation"
+//import { system } from "systeminformation"
 import * as path from "path";
 
 import { fileURLToPath } from 'url';
@@ -13,10 +13,12 @@ class RemoteMessageManager {
         this.RemoteKeyCode = this.root.lookupEnum("remote.RemoteKeyCode").values;
         this.RemoteDirection = this.root.lookupEnum("remote.RemoteDirection").values;
 
-        system().then((data) => {
-            this.manufacturer = data.manufacturer;
-            this.model = data.model;
-        });
+        this.manufacturer = 'unknown manufacturer';
+        this.model = 'unknown model';
+        // system().then((data) => {
+        //     this.manufacturer = data.manufacturer;
+        //     this.model = data.model;
+        // });
     }
 
     create(payload){

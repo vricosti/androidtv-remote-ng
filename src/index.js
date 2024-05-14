@@ -1,7 +1,7 @@
 import {CertificateGenerator} from "./certificate/CertificateGenerator.js"
 import {PairingManager} from "./pairing/PairingManager.js"
 import {RemoteManager} from "./remote/RemoteManager.js";
-import {remoteMessageManager} from "./remote/RemoteMessageManager.js";
+import {RemoteMessageManager} from "./remote/RemoteMessageManager.js";
 import EventEmitter from "events";
 
 export class AndroidRemote extends EventEmitter {

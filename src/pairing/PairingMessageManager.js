@@ -1,5 +1,5 @@
 import protobufjs from "protobufjs";
-import {system} from "systeminformation";
+//import {system} from "systeminformation";
 import * as path from "path";
 
 import { fileURLToPath } from 'url';
@@ -15,10 +15,12 @@ class PairingMessageManager {
         this.RoleType = this.root.lookupEnum("RoleType").values;
         this.EncodingType = this.root.lookupEnum("pairing.PairingEncoding.EncodingType").values;
 
-        system().then((data) => {
-            pairingMessageManager.manufacturer = data.manufacturer;
-            pairingMessageManager.model = data.model;
-        });
+        this.manufacturer = 'unknown manufacturer';
+        this.model = 'unknown model';
+        // system().then((data) => {
+        //     pairingMessageManager.manufacturer = data.manufacturer;
+        //     pairingMessageManager.model = data.model;
+        // });
     }
 
     create(payload){
